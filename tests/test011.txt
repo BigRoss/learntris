@@ -1,0 +1,7 @@
+> J t q
+b . .
+b b b
+. . .
+= J : The J Tetramino
+: The J tetramino is blue and inhabits a 3x3 matrix. Its default
+: orientation is rotated 90 degrees counter clockwise.

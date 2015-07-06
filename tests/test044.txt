@@ -1,0 +1,21 @@
+> q
+(Something Awesome)
+= The Next Test
+: Congratualations! Your learntris implementation passes all
+: existing tests, and you've even created and passed a few of
+: your own.
+:
+: Take a moment to pat yourself on the back for making it this far. :)
+:
+: Now it's time for the real test...
+:
+: Take a look at what you've built so far. Is this everything
+: you'd want to see in a video game? Or is it missing a thing
+: or two?
+:
+: This test case contradicts the very first one, so the only way
+: to make it pass is to delete it, or replace it with something
+: better. The choice is yours.
+:
+: Either way, you will need to open up testplan.org and search
+: for the test named 'learntris.end'.

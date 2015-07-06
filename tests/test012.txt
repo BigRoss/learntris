@@ -1,0 +1,6 @@
+> L t q
+. . o
+o o o
+. . .
+= L : The L Tetramino
+: The L tetramino is a mirror image of the J. It is colored orange.

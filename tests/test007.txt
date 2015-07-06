@@ -1,0 +1,27 @@
+> I
+> t
+. . . .
+c c c c
+. . . .
+. . . .
+> q
+= t,I : drawing and selecting the active tetramino
+: At any point in time while the game is running, there
+: should be a single 'active' tetramino that the player
+: is able to control. Normally these are chosen somewhat
+: randomly at runtime, but for automated testing, there
+: needs to be some way to set the active tetramino.
+:
+: There are exactly seven tetraminos and they each have
+: specific names used by mathematicians and players of
+: video games. This one is called the I tetramino, and
+: in the game, it is generally colored cyan.
+:
+: After issuing the 'I' command, the active tetramino
+: should be the 'I' tetramino, and it should be oriented
+: horizontally.
+:
+: In order to verify that the active tetramino is correct,
+: the tests need some way to ask what it looks like. This
+: is the role of the 't' command: it displays the active
+: tetramino.

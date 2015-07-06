@@ -1,0 +1,12 @@
+> O
+> t
+y y
+y y
+> q
+= O : The O Tetramino
+: The 2x2 square is called the O tetramino, and in the game
+: it should be colored yellow.
+:
+: Note that while the I tetramino appeared inside a 4x4
+: matrix, the O tetramino's matrix is 2x2. This has to do
+: with rotation, which we will deal with later.

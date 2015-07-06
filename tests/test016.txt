@@ -1,0 +1,18 @@
+> Z t
+r r .
+. r r
+. . .
+> ) t
+. . r
+. r r
+. r .
+> ) t
+. . .
+r r .
+. r r
+> ) t q
+. r .
+r r .
+r . .
+= Z Rotation
+: The Z rotates within its 3x3 matrix.

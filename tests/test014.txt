@@ -1,0 +1,23 @@
+> I ) t
+. . c .
+. . c .
+. . c .
+. . c .
+> ) t
+. . . .
+. . . .
+c c c c
+. . . .
+> ) t
+. c . .
+. c . .
+. c . .
+. c . .
+> ) t q
+. . . .
+c c c c
+. . . .
+. . . .
+= ) : clockwise rotation
+: The ')' command rotates the active tetramino 90 degrees clockwise.
+: Here we see the I tetramino rotating clockwise within its bounding box.

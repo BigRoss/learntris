@@ -1,0 +1,30 @@
+> cT vvvv vvvv vvvv vvvv vvvv vvvv Pq
+. . . . . . . . . . #  0
+. . . . . . . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . . . . . . . . # 18
+. . . . . . . . . . # 19
+. . . . M . . . . . # 20
+. . . M M M . . . . # 21
+= Oh, how the Mighty have Fallen...
+: Once upon a time, a T tetramino spawned at the
+: top of the well, and used the 'v' command to
+: move down by one cell 24 times. Sadly, it was
+: unable to burrow into the earth and spent the
+: remainder of its life standing on its head at
+: the bottom of a well.

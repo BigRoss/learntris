@@ -1,0 +1,20 @@
+> S t ; ) t ; ) t ; ) t q
+. g g
+g g .
+. . .
+
+. g .
+. g g
+. . g
+
+. . .
+. g g
+g g .
+
+g . .
+g g .
+. g .
+= ; : newlines and S rotation
+: You should be getting the hang of rotation now.
+: Here we see the new ';' command, which emits a newline
+: simply to make the output a little more readable.

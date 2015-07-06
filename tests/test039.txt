@@ -1,0 +1,27 @@
+> J ) << V Z ) vvvvvvvvvvvvvvvvv < Pq
+. . . . . . . . . . #  0
+. . . . . . . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . R . . . . # 17
+. . . . R R . . . . # 18
+. . b b R . . . . . # 19
+. . b . . . . . . . # 20
+. . b . . . . . . . # 21
+= Sideways Block Collisions 1
+: Here we've hard-drapped a J off to the left side a bit, then
+: spawned a Z and manually moved it down next to the fallen blocks.
+: The '<' commands should have no effect.

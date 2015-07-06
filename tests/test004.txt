@@ -1,0 +1,8 @@
+> ?s
+0
+>q
+= ?s : query 's' register (score)
+: The '?s' command instructs learntris to display the
+: current score as a decimal number.
+:
+: Initially, the score should be zero.

@@ -1,0 +1,41 @@
+> p
+# 1 2 3 4 5 6 7 8 9 ( first column, hidden by the #, is 0
+. . . . . . . . . . #  0
+. . . . . . . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . . . . . . . . # 18
+. . . . . . . . . . # 19
+. . . . . . . . . . # 20
+. . . . . . . . . . # 21
+> q
+= p : print
+: The 'p' command instructs learntris to print the state
+: of the matrix, the rectangular array of cells in which
+: blocks can appear.
+:
+: The matrix is 10 cells wide and 22 cells deep, although
+: the top two rows are used only for spawning new Tetraminos.
+:
+: At the start of the game, the matrix should be empty.
+: The 'p' command should indicate empty cells with the
+: '.' character.
+:
+: Cells should be separated by spaces.
+:
+: Lines should be separated by the standard end of line
+: sequence on your operating system (python's "\n").

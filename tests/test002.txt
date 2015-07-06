@@ -1,0 +1,65 @@
+> g
+> . . . . . . . . . . # 0
+> . . . . . . . . . . # 1
+> . . . . . . . . . . # 2
+> . . . . . . . . . . # 3
+> m m m m m m m m m m # 4
+> b b b b b b b b b b # 5
+> c c c c c c c c c c # 6
+> g g g g g g g g g g # 7
+> y y y y y y y y y y # 8
+> o o o o o o o o o o # 9
+> r r r r r r r r r r # 10
+> . . . . . . . . . . # 11
+> . . . . . . . . . . # 12
+> . . . . . . . . . . # 13
+> . . . . . . . . . . # 14
+> c . . . . . . . . . # 15
+> c . . . . . . . . . # 16
+> c . . . . g . . . . # 17
+> c . . o . g g . . . # 18
+> . . . o . b g . . . # 19
+> . m r r o o b y y . # 20
+> m m m r r b b y y . # 21
+> p
+. . . . . . . . . . # 0
+. . . . . . . . . . # 1
+. . . . . . . . . . # 2
+. . . . . . . . . . # 3
+m m m m m m m m m m # 4
+b b b b b b b b b b # 5
+c c c c c c c c c c # 6
+g g g g g g g g g g # 7
+y y y y y y y y y y # 8
+o o o o o o o o o o # 9
+r r r r r r r r r r # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+c . . . . . . . . . # 15
+c . . . . . . . . . # 16
+c . . . . g . . . . # 17
+c . . o . g g . . . # 18
+. . . o . b g . . . # 19
+. m r r o o b y y . # 20
+m m m r r b b y y . # 21
+> q
+= g : given
+: The 'g' command instructs learntris to read 22 lines
+: of text from the standard input stream, and use the
+: characters on these lines to populate some internal
+: representation of the matrix.
+:
+: The letter 'g' is a mnemonic for the word 'given', as
+: in: "given the following matrix...."
+:
+: The input format should be identical to the output
+: produced by the 'p' command.
+:
+: The letters used in the representation correspond to
+: the set of colors used for blocks in the game:
+:
+: . = empty (black)     b = blue         c = cyan
+: g = green             m = magenta      o = orange
+: r = red               y = yellow

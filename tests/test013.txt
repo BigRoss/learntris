@@ -1,0 +1,6 @@
+> T t q
+. m .
+m m m
+. . .
+= T : The T Tetramino
+: The T is is colored magenta and spawns upside down in a 3x3 matrix.

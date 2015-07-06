@@ -1,0 +1,32 @@
+> c O P q
+. . . . Y Y . . . . #  0
+. . . . Y Y . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . . . . . . . . # 18
+. . . . . . . . . . # 19
+. . . . . . . . . . # 20
+. . . . . . . . . . # 21
+= P : Print Matrix with active Tetramino
+: Now it's time to place the active tetramino in the matrix.
+: The 'P' command should print the matrix just like 'p' does,
+: but in addition, it should show the active tetramino.
+:
+: Note that the active tetramino is drawn with upper case
+: letters, so we can distinguish it from the settled blocks.
+:
+: Here we see the O tetramino in its initial spawn location.

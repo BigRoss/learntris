@@ -1,0 +1,18 @@
+> L t ; ) t ; ) t ; ) t q
+. . o
+o o o
+. . .
+
+. o .
+. o .
+. o o
+
+. . .
+o o o
+o . .
+
+o o .
+. o .
+. o .
+= L Rotation
+: Yep. Another rotating tetramino.

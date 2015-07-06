@@ -1,0 +1,29 @@
+> cJPq
+. . . B . . . . . . #  0
+. . . B B B . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . . . . . . . . # 18
+. . . . . . . . . . # 19
+. . . . . . . . . . # 20
+. . . . . . . . . . # 21
+= Spawn location for J
+: Here's the spawn location for J.
+: 
+: Notice that there are no spaces between the commands
+: this time. We said earlier that commands may be separated
+: by spaces or newlines, but we never said they *had* to be.

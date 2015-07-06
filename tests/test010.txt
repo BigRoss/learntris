@@ -1,0 +1,6 @@
+> S t q
+. g g
+g g .
+. . .
+= S : The S Tetramino.
+: The green S tetramino inhabits a 3x3 matrix. It is a mirror image of the Z.

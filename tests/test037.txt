@@ -1,0 +1,30 @@
+> TV ZV pq
+. . . . . . . . . . #  0
+. . . . . . . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . r r . . . . . # 18
+. . . . r r . . . . # 19
+. . . . m . . . . . # 20
+. . . m m m . . . . # 21
+= Block Collisions
+: Here we have our first test of collision detection
+: between a falling piece and a block already in the well.
+:
+: When the second hard drop is issued, the Z tetramino
+: should collide with the remains of the T and come to
+: a complete halt.

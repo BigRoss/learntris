@@ -1,0 +1,6 @@
+> q
+= q : quit
+: The 'q' command instructs learntris to quit.
+:
+: Learntris should not produce any output unless
+: explicitly instructed to do so.

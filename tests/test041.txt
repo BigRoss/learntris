@@ -1,0 +1,36 @@
+> @ p
+Learntris (c) 1992 Tetraminex, Inc.
+Press start button to begin.
+> ! p q
+. . . . . . . . . . #  0
+. . . . . . . . . . #  1
+. . . . . . . . . . #  2
+. . . . . . . . . . #  3
+. . . . . . . . . . #  4
+. . . . . . . . . . #  5
+. . . . . . . . . . #  6
+. . . . . . . . . . #  7
+. . . . . . . . . . #  8
+. . . . . . . . . . #  9
+. . . . . . . . . . # 10
+. . . . . . . . . . # 11
+. . . . . . . . . . # 12
+. . . . . . . . . . # 13
+. . . . . . . . . . # 14
+. . . . . . . . . . # 15
+. . . . . . . . . . # 16
+. . . . . . . . . . # 17
+. . . . . . . . . . # 18
+. . . . . . . . . . # 19
+. . . . . . . . . . # 20
+. . . . . . . . . . # 21
+= The Title Screen
+: Legal says we need a title screen with a copyright notice.
+: It should show up when you first turn on the game, but for
+: the tests, they're fine as long as there's some way to get
+: to it.
+: 
+: Here's what we came up with: the '@' command takes you to
+: the title screen, where the 'p' command prints out the main
+: menu. Then '!' to simulate the start button should take you
+: to the game.
