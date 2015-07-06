@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The Learntris Challenge
 =======================
 
@@ -50,3 +51,7 @@ If you get stuck, please come join us in #learnprogramming on irc.freenode.net, 
 post a question to [/r/lpmc](http://reddit.com/r/lpmc/) at reddit, and we'll
 try to help you sort it out.
 
+=======
+# learntris
+learntris
+>>>>>>> e789754e3d60cafface75ce12fc257bb2742ca4a
