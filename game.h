@@ -16,6 +16,8 @@ public:
 	void command(std::string input);
 	
 private:
+	float m_score;
+	int m_cleared;
 	tetMat* m_mat;
 };
 

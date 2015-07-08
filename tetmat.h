@@ -13,6 +13,9 @@ public:
 	virtual ~tetMat();
 
 	void create();
+	void setPoint(int x, int y, char newVal);
+	void clear();
+	
 	void printMatrix() const;
 
 	int getHeight() const;
