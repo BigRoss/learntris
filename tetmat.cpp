@@ -12,10 +12,12 @@ tetMat::~tetMat(){
 
 }
 
+//Set a point in the matrix to another character
 void tetMat::setPoint(int x, int y, char newVal){
 	m_mat[y][x] = newVal;
 }
 
+//Reset the matrix
 void tetMat::clear(){
 	for(int i = 0; i < m_height; i++){
 		for(int j = 0; j < m_width; j++){
@@ -24,6 +26,28 @@ void tetMat::clear(){
 	}
 }
 
+
+void tetMat::step(float& score, int& cleared){
+	for(int i = 0; i < m_height; i++){
+		bool line = true;
+		for(int j = 0; j < m_width; j++){
+			if(m_mat[i][j] == '.'){
+				line = false;
+				break;
+			}
+		}
+		//If we clear a line then increment score and lines cleared, also reset the cleared line
+		if(line){
+			for(int j = 0; j < m_width; j++){
+				m_mat[i][j] = '.';
+			}
+			cleared++;
+			score += 100.0;
+		}
+	}
+}
+
+//Create a blank matrix
 void tetMat::create(){
 	for(int i = 0; i < m_height; i++){
 		std::vector<char> row;
@@ -34,6 +58,7 @@ void tetMat::create(){
 	}
 }
 
+//Print the matrix
 void tetMat::printMatrix() const{
 	for(int i = 0; i < m_height; i++){
 		for(int j = 0; j < m_width; j++){

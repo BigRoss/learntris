@@ -6,6 +6,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include "tetMat.h"
+#include "tetramino.h"
 
 class Game{
 public:
@@ -19,6 +20,7 @@ private:
 	float m_score;
 	int m_cleared;
 	tetMat* m_mat;
+	Tetramino m_currTet;
 };
 
 #endif

@@ -14,6 +14,7 @@ public:
 
 	void create();
 	void setPoint(int x, int y, char newVal);
+	void step(float& score, int& cleared);
 	void clear();
 	
 	void printMatrix() const;

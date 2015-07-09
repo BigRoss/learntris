@@ -7,13 +7,14 @@ Game::Game(){
 }
 
 Game::Game(int width, int height){
-	m_mat = new tetMat(width, height);
+	m_mat = new tetMat(width, height);	
 	m_score = 0;
 	m_cleared = 0;
 }
 
 Game::~Game(){
 	delete m_mat;
+	delete m_currTet;
 }
 
 void Game::command(std::string input){
@@ -54,7 +55,10 @@ void Game::command(std::string input){
 		std::cout << ss.str() << std::endl; 
 	}
 	else if(input == "s"){
-		// m_mat->step();
+		m_mat->step(m_score, m_cleared);
+	}
+	else if(input == "I" || input == "O" || input == "Z" || input == "S" || input == "J" || input == "L" || input == "T"){
+		m_currTet Tetramino(input.at(0));
 	}
 	else{
 
