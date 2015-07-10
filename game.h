@@ -20,7 +20,7 @@ private:
 	float m_score;
 	int m_cleared;
 	tetMat* m_mat;
-	Tetramino m_currTet;
+	Tetramino* m_currTet;
 };
 
 #endif
