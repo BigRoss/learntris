@@ -19,6 +19,7 @@ public:
 	
 	void printMatrix() const;
 
+	char getVal(int x, int y);
 	int getHeight() const;
 	int getWidth() const;
 private:

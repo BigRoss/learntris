@@ -11,9 +11,11 @@ public:
 	//get the width if width > height or vice versa
 	int getMaxLength() const;
 	void setChar(char tetName);
-	void insertTet(tetMat& mat);
+	void insertTet(tetMat* mat);
 	void showTetramino();
+	void rotate(int direction);
 private:
+	tetMat* displayMatrix;
 	bool m_active;
 	char m_blockName;
 	char m_char;

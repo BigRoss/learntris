@@ -68,6 +68,10 @@ void tetMat::printMatrix() const{
 	}
 }
 
+char tetMat::getVal(int x, int y){
+	return m_mat[y][x];
+}
+
 int tetMat::getHeight() const{
 	return m_height;
 }

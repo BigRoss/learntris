@@ -4,12 +4,14 @@ Game::Game(){
 	m_mat = new tetMat();
 	m_score = 0;
 	m_cleared = 0;
+	m_currTet = NULL;
 }
 
 Game::Game(int width, int height){
 	m_mat = new tetMat(width, height);	
 	m_score = 0;
 	m_cleared = 0;
+	m_currTet = NULL;
 }
 
 Game::~Game(){
@@ -74,7 +76,19 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == 't'){
 			//Diplay the tetramino in a matrix
-			m_currTet->showTetramino();
+			if(m_currTet != NULL){
+				m_currTet->showTetramino();	
+			}
+		}
+		else if(inputChar == ')'){
+			if(m_currTet != NULL){
+				m_currTet->rotate(1);	
+			}
+		}
+		else if(inputChar == '('){
+			if(m_currTet != NULL){
+				m_currTet->rotate(0);	
+			}
 		}
 		else if(inputChar == ';'){
 			std::cout << std::endl;
