@@ -67,6 +67,7 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == 'c'){
 			m_mat->clear();
+			delete m_currTet;
 		}
 		else if(inputChar == 's'){
 			m_mat->step(m_score, m_cleared);
@@ -92,6 +93,16 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == ';'){
 			std::cout << std::endl;
+		}
+		else if(inputChar == 'P'){
+			m_currTet->insertTetGame(m_mat);
+			m_mat->printMatrix();
+		}
+		else if(inputChar == '<'){
+
+		}
+		else if(inputChar == '>'){
+			
 		}
 		else{
 

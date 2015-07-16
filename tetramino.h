@@ -2,6 +2,7 @@
 #define TETRAMINO_H
 
 #include "tetmat.h"
+#include <ctype.h>
 
 class Tetramino{
 public:
@@ -12,6 +13,9 @@ public:
 	int getMaxLength() const;
 	void setChar(char tetName);
 	void insertTet(tetMat* mat);
+	void insertTetGame(tetMat* mat);
+	void pushLeft(tetMat* mat);
+	void pushRight(tetMat* mat);
 	void showTetramino();
 	void rotate(int direction);
 private:

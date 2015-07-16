@@ -19,6 +19,8 @@ public:
 	
 	void printMatrix() const;
 
+	bool checkColumn(int num) const;
+	bool checkRow(int num) const;
 	char getVal(int x, int y);
 	int getHeight() const;
 	int getWidth() const;

@@ -59,7 +59,31 @@ void Tetramino::rotate(int direction){
 			}
 		}
 	}
-		
+}
+
+void Tetramino::insertTetGame(tetMat* mat){
+	int startPoint = 3;
+	if(displayMatrix->getHeight() == 2){
+		startPoint = 4;
+	}
+
+	for(int i = 0; i < displayMatrix->getHeight(); i++){
+		//TODO: Check if any blocks under the 2 block free zone at the top!
+		for(int j = 0; j < displayMatrix->getWidth(); j++){
+			if(displayMatrix->getVal(j, i) != '.'){
+				char newChar = toupper(displayMatrix->getVal(j, i));
+				mat->setPoint(startPoint + j, i, newChar);	
+			}
+		}
+	}
+}
+
+void Tetramino::pushLeft(tetMat* mat){
+
+}
+
+void Tetramino::pushRight(tetMat* mat){
+	
 }
 
 void Tetramino::insertTet(tetMat* mat){

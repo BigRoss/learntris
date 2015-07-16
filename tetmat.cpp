@@ -58,6 +58,26 @@ void tetMat::create(){
 	}
 }
 
+//Check if there is anything in the row #num
+bool tetMat::checkRow(int num) const{
+	for(int i = 0; i < m_width; i++){
+		if(m_mat[num][i] != '.'){
+			return false;
+		}
+	}
+	return true;
+}
+
+//Check if there is anything in the column #num
+bool tetMat::checkColumn(int num) const{
+	for(int i = 0; i < m_height; i++){
+		if(m_mat[i][num] != '.'){
+			return false;
+		}
+	}
+	return true;
+}
+
 //Print the matrix
 void tetMat::printMatrix() const{
 	for(int i = 0; i < m_height; i++){
