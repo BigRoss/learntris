@@ -16,10 +16,14 @@ public:
 	void insertTetGame(tetMat* mat);
 	void pushLeft(tetMat* mat);
 	void pushRight(tetMat* mat);
+	void hardDrop(tetMat* mat);
+	void pushDown(tetMat* mat);
 	void showTetramino();
 	void rotate(int direction);
 private:
 	tetMat* displayMatrix;
+	int m_displayX;
+	int m_displayY;
 	bool m_active;
 	char m_blockName;
 	char m_char;

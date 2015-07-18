@@ -1,21 +1,27 @@
 #include "tetramino.h"
 
 Tetramino::Tetramino(char tetName){
-	m_active = false;
+	m_active = true;
 	m_blockName = tetName;
 	setChar(tetName);
 
 	int matrixSize = getMaxLength();
 	displayMatrix = new tetMat(matrixSize, matrixSize);
+	m_displayX = 3;
+	m_displayY = 0;
+	if(displayMatrix->getHeight() == 2){
+		m_displayX = 4;
+	}
+
 	insertTet(displayMatrix);
 }
 
 Tetramino::~Tetramino(){
-
+	delete displayMatrix;
 }
 
 void Tetramino::showTetramino(){
-	displayMatrix->printMatrix();
+	displayMatrix->printMatrix(0);
 }
 
 //To rotate a matrix 90/-90 degrees first transpose the matrix then reverse the rows, direction = 1 for 90 degree rotation, vice versa
@@ -62,28 +68,102 @@ void Tetramino::rotate(int direction){
 }
 
 void Tetramino::insertTetGame(tetMat* mat){
-	int startPoint = 3;
-	if(displayMatrix->getHeight() == 2){
-		startPoint = 4;
-	}
-
 	for(int i = 0; i < displayMatrix->getHeight(); i++){
 		//TODO: Check if any blocks under the 2 block free zone at the top!
 		for(int j = 0; j < displayMatrix->getWidth(); j++){
 			if(displayMatrix->getVal(j, i) != '.'){
 				char newChar = toupper(displayMatrix->getVal(j, i));
-				mat->setPoint(startPoint + j, i, newChar);	
+				mat->setPoint(m_displayX + j, m_displayY + i, newChar);	
 			}
 		}
 	}
 }
 
-void Tetramino::pushLeft(tetMat* mat){
+void Tetramino::hardDrop(tetMat* mat){
+	int i = 0;
+	while(i < 22){
+		pushDown(mat);
+		i++;
+	}
+	m_active = false;
+}
 
+void Tetramino::pushDown(tetMat* mat){
+	char blockChar = toupper(m_char);
+	for(int j = 0; j < mat->getWidth(); j++){
+		for(int i = mat->getHeight() - 1; i >= 0; i--){
+			if(mat->getVal(j, i) == blockChar && (mat->getVal(j, i + 1) != '.' ||  i + 1 >= mat->getHeight() ) ) {
+				return;
+			}
+			else{
+				break;
+			}
+		}
+	}
+	//Shift block down
+	for(int j = 0; j < mat->getWidth(); j++){
+		for(int i = mat->getHeight(); i >= 0; i--){
+			if(mat->getVal(j, i) == blockChar){
+				mat->setPoint(j, i + 1, blockChar);
+				mat->setPoint(j, i, '.');
+			}
+		}
+	}
+	m_displayY++;
+}
+
+void Tetramino::pushLeft(tetMat* mat){
+	char blockChar = toupper(m_char);
+	for(int i = 0; i < mat->getHeight(); i++){
+		//Check to see if there is anything to the left of the block, if there is then we can't move and return
+		for(int j = 0; j < mat->getWidth(); j++){
+			if(mat->getVal(j, i) == blockChar && (mat->getVal(j - 1, i) != '.' || j == 0)){
+				return;
+			}
+			else{
+				//Break as we only check the first block for each row
+				break;
+			}
+		}
+	}
+
+	//Shift the block to the left:
+	for(int i = 0; i < mat->getHeight(); i++){
+		for(int j = 1; j < mat->getWidth(); j++){
+			if(mat->getVal(j, i) == blockChar){
+				mat->setPoint(j - 1, i, blockChar);
+				mat->setPoint(j, i, '.');
+			}
+		}
+	}
+	m_displayX++;
 }
 
 void Tetramino::pushRight(tetMat* mat){
-	
+	char blockChar = toupper(m_char);
+	for(int i = 0; i < mat->getHeight(); i++){
+		//Check to see if there is anything to the right of the block, if there is then we can't move and return
+		for(int j = mat->getWidth() - 1; j > 0; j--){
+			if(mat->getVal(j, i) == blockChar && (mat->getVal(j - 1, i) != '.' || j == 0)){
+				return;
+			}
+			else{
+				//Possible to shift, check next column
+				break;
+			}
+		}
+	}
+
+	//Shift the block to the right
+	for(int i = 0; i < mat->getHeight(); i++){
+		for(int j = mat->getWidth() - 1; j >= 0; j--){
+			if(mat->getVal(j, i) == blockChar){
+				mat->setPoint(j + 1, i, blockChar);
+				mat->setPoint(j, i, '.');
+			}
+		}
+	}
+	m_displayX++;
 }
 
 void Tetramino::insertTet(tetMat* mat){

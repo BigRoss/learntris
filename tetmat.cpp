@@ -26,6 +26,16 @@ void tetMat::clear(){
 	}
 }
 
+void tetMat::clearActive(){
+	for(int i = 0; i < m_height; i++){
+		for(int j = 0; j < m_width; j++){
+			if(isupper(m_mat[i][j])){
+				m_mat[i][j] = '.';
+			}
+		}
+	}
+}
+
 
 void tetMat::step(float& score, int& cleared){
 	for(int i = 0; i < m_height; i++){
@@ -78,17 +88,25 @@ bool tetMat::checkColumn(int num) const{
 	return true;
 }
 
-//Print the matrix
-void tetMat::printMatrix() const{
+//Print the matrix, if i = 0 then print everything including the active block, if it is 1 then only print inactive blocks etc
+void tetMat::printMatrix(int num) const{
 	for(int i = 0; i < m_height; i++){
 		for(int j = 0; j < m_width; j++){
-			std::cout << m_mat[i][j] << " ";
+			if(isupper(m_mat[i][j]) && num == 1){
+				std::cout << ". ";
+			}
+			else{
+				std::cout << m_mat[i][j] << " ";
+			}
 		}
 		std::cout << std::endl;
 	}
 }
 
 char tetMat::getVal(int x, int y){
+	if(x > m_width - 1 || x < 0 || y > m_height - 1 || y < 0){
+		return '.';
+	}
 	return m_mat[y][x];
 }
 

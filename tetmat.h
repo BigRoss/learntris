@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ctype.h>
 
 class tetMat{
 public:
@@ -16,8 +17,9 @@ public:
 	void setPoint(int x, int y, char newVal);
 	void step(float& score, int& cleared);
 	void clear();
+	void clearActive();
 	
-	void printMatrix() const;
+	void printMatrix(int num) const;
 
 	bool checkColumn(int num) const;
 	bool checkRow(int num) const;

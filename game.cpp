@@ -48,7 +48,7 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == 'p'){
 			//Print the state of the matrix
-			m_mat->printMatrix();
+			m_mat->printMatrix(1);
 		}
 		else if(inputChar == 'g'){
 			//Parse and set new values
@@ -67,13 +67,15 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == 'c'){
 			m_mat->clear();
-			delete m_currTet;
+			//TODO: make sure it doesn't draw the block either
+			m_currTet = NULL;
 		}
 		else if(inputChar == 's'){
 			m_mat->step(m_score, m_cleared);
 		}
 		else if(inputChar == 'I' || inputChar == 'O' || inputChar == 'Z' || inputChar == 'S' || inputChar == 'J' || inputChar == 'L' || inputChar == 'T'){
 			m_currTet = new Tetramino(inputChar);
+			m_currTet->insertTetGame(m_mat);
 		}
 		else if(inputChar == 't'){
 			//Diplay the tetramino in a matrix
@@ -83,26 +85,43 @@ void Game::command(std::string input){
 		}
 		else if(inputChar == ')'){
 			if(m_currTet != NULL){
-				m_currTet->rotate(1);	
+				m_mat->clearActive();
+				m_currTet->rotate(1);
+				m_currTet->insertTetGame(m_mat);	
 			}
 		}
 		else if(inputChar == '('){
 			if(m_currTet != NULL){
-				m_currTet->rotate(0);	
+				m_mat->clearActive();
+				m_currTet->rotate(0);
+				m_currTet->insertTetGame(m_mat);	
+			}
+		}
+		else if(inputChar == 'P'){
+			m_mat->printMatrix(0);
+		}
+		else if(inputChar == '<'){
+			if(m_currTet != NULL){
+				m_currTet->pushLeft(m_mat);	
+			}
+		}
+		else if(inputChar == '>'){
+			if(m_currTet != NULL){
+				m_currTet->pushRight(m_mat);	
+			}
+		}
+		else if(inputChar == 'v'){
+			if(m_currTet != NULL){
+				m_currTet->pushDown(m_mat);	
+			}
+		}
+		else if(inputChar ==  'V'){
+			if(m_currTet != NULL){
+				m_currTet->hardDrop(m_mat);
 			}
 		}
 		else if(inputChar == ';'){
 			std::cout << std::endl;
-		}
-		else if(inputChar == 'P'){
-			m_currTet->insertTetGame(m_mat);
-			m_mat->printMatrix();
-		}
-		else if(inputChar == '<'){
-
-		}
-		else if(inputChar == '>'){
-			
 		}
 		else{
 
