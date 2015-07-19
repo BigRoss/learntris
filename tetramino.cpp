@@ -71,6 +71,16 @@ void Tetramino::insertTetGame(tetMat* mat){
 	for(int i = 0; i < displayMatrix->getHeight(); i++){
 		//TODO: Check if any blocks under the 2 block free zone at the top!
 		for(int j = 0; j < displayMatrix->getWidth(); j++){
+			if(displayMatrix->getVal(j, i) != '.' && mat->getVal(m_displayX + j, m_displayY + i) != '.'){
+				std::cout << "Game Over";
+				return;
+			}
+		}
+	}
+
+	for(int i = 0; i < displayMatrix->getHeight(); i++){
+		//TODO: Check if any blocks under the 2 block free zone at the top!
+		for(int j = 0; j < displayMatrix->getWidth(); j++){
 			if(displayMatrix->getVal(j, i) != '.'){
 				char newChar = toupper(displayMatrix->getVal(j, i));
 				mat->setPoint(m_displayX + j, m_displayY + i, newChar);	
@@ -81,22 +91,35 @@ void Tetramino::insertTetGame(tetMat* mat){
 
 void Tetramino::hardDrop(tetMat* mat){
 	int i = 0;
-	while(i < 22){
+	while(i < 25){
 		pushDown(mat);
 		i++;
 	}
-	m_active = false;
+	deactivateBlock(mat);
+}
+
+void Tetramino::deactivateBlock(tetMat* mat){
+	for(int i = 0; i < mat->getHeight(); i++){
+		for(int j = 0; j < mat->getWidth(); j++){
+			if(isupper(mat->getVal(j, i))){
+				mat->setPoint(j, i, m_char);
+			}
+		}
+	}
 }
 
 void Tetramino::pushDown(tetMat* mat){
 	char blockChar = toupper(m_char);
 	for(int j = 0; j < mat->getWidth(); j++){
 		for(int i = mat->getHeight() - 1; i >= 0; i--){
-			if(mat->getVal(j, i) == blockChar && (mat->getVal(j, i + 1) != '.' ||  i + 1 >= mat->getHeight() ) ) {
-				return;
-			}
-			else{
-				break;
+			if(mat->getVal(j, i) == blockChar){
+				if((mat->getVal(j, i + 1) != '.' ||  i + 1 >= mat->getHeight() ) ) {
+					// deactivateBlock(mat);
+					return;
+				}
+				else{
+					break;
+				}
 			}
 		}
 	}
@@ -104,12 +127,19 @@ void Tetramino::pushDown(tetMat* mat){
 	for(int j = 0; j < mat->getWidth(); j++){
 		for(int i = mat->getHeight(); i >= 0; i--){
 			if(mat->getVal(j, i) == blockChar){
-				mat->setPoint(j, i + 1, blockChar);
-				mat->setPoint(j, i, '.');
+				if(mat->getVal(j, i + 1) != '.' ||  i + 1 >= mat->getHeight() ){
+					// deactivateBlock(mat);
+					return;
+				}
+				else{
+					mat->setPoint(j, i + 1, blockChar);
+					mat->setPoint(j, i, '.');
+				}
 			}
 		}
 	}
 	m_displayY++;
+
 }
 
 void Tetramino::pushLeft(tetMat* mat){
@@ -117,13 +147,16 @@ void Tetramino::pushLeft(tetMat* mat){
 	for(int i = 0; i < mat->getHeight(); i++){
 		//Check to see if there is anything to the left of the block, if there is then we can't move and return
 		for(int j = 0; j < mat->getWidth(); j++){
-			if(mat->getVal(j, i) == blockChar && (mat->getVal(j - 1, i) != '.' || j == 0)){
-				return;
+			if(mat->getVal(j, i) == blockChar ){
+				if(mat->getVal(j - 1, i) != '.' || j == 0){
+					return;
+				}
+				else{
+					//Break as we only check the first block for each row
+					break;
+				}
 			}
-			else{
-				//Break as we only check the first block for each row
-				break;
-			}
+			
 		}
 	}
 
@@ -136,7 +169,7 @@ void Tetramino::pushLeft(tetMat* mat){
 			}
 		}
 	}
-	m_displayX++;
+	m_displayX--;
 }
 
 void Tetramino::pushRight(tetMat* mat){
@@ -144,12 +177,14 @@ void Tetramino::pushRight(tetMat* mat){
 	for(int i = 0; i < mat->getHeight(); i++){
 		//Check to see if there is anything to the right of the block, if there is then we can't move and return
 		for(int j = mat->getWidth() - 1; j > 0; j--){
-			if(mat->getVal(j, i) == blockChar && (mat->getVal(j - 1, i) != '.' || j == 0)){
-				return;
-			}
-			else{
-				//Possible to shift, check next column
-				break;
+			if(mat->getVal(j, i) == blockChar){
+				if(mat->getVal(j + 1, i) != '.' || j == mat->getWidth() - 1){
+					return;
+				}
+				else{
+					//Possible to shift, check next column
+					break;
+				}
 			}
 		}
 	}

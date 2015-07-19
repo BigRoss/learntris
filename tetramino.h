@@ -17,6 +17,7 @@ public:
 	void pushLeft(tetMat* mat);
 	void pushRight(tetMat* mat);
 	void hardDrop(tetMat* mat);
+	void deactivateBlock(tetMat* mat);
 	void pushDown(tetMat* mat);
 	void showTetramino();
 	void rotate(int direction);
